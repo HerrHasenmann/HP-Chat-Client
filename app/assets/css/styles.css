@@ -1,0 +1,11 @@
+md-input-container.md-no-error div.md-errors-spacer:empty {
+    min-height: 0;
+}
+
+md-list-item md-icon {
+    margin: initial;
+}
+
+md-list-item .md-list-item-inner:before, md-list-item:before {
+    min-height: unset;
+}

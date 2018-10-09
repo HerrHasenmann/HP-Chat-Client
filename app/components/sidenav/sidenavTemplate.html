@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<md-sidenav
+        flex
+        layout="column"
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-sm')"
+        md-whiteframe="4">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+
+            <span>Rooms</span>
+
+            <span flex></span>
+
+            <md-button hide show-xs show-sm class="md-icon-button" ng-click="$ctrl.closeSidenav()">
+                <md-icon md-svg-icon="close"></md-icon>
+            </md-button>
+
+        </div>
+    </md-toolbar>
+    <md-content flex>
+
+        <rooms></rooms>
+
+    </md-content>
+
+    <md-content layout="row">
+
+        <!-- add additional buttons taht stick at the bottom -->
+
+    </md-content>
+</md-sidenav>

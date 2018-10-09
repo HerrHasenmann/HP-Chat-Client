@@ -1,0 +1,1 @@
+var app = angular.module("app", ["ngMaterial", "md.data.table", "angular-toArrayFilter", "ngRoute"]);

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="RootController" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Material Angular Template</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="./node_modules/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="./node_modules/angular-material-data-table/dist/md-data-table.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./assets/css/styles.min.css">
+</head>
+<body ng-cloak layout="column">
+
+<welcome ng-if="!$root.user()" layout-fill></welcome>
+
+<chat layout-fill></chat>
+
+<!-- AngularJS -->
+<script src="./node_modules/angular/angular.min.js"></script>
+<script src="./node_modules/angular-aria/angular-aria.min.js"></script>
+<script src="./node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="./node_modules/angular-route/angular-route.min.js"></script>
+
+<!-- Material Angular -->
+<script src="./node_modules/angular-material/angular-material.min.js"></script>
+<script src="./node_modules/angular-material-data-table/dist/md-data-table.min.js"></script>
+
+<!-- Utils -->
+<script src="./node_modules/moment/min/moment-with-locales.min.js"></script>
+
+<!-- Javascript of application-->
+<script src="./app.module.min.js"></script>
+<script src="./app.config.min.js"></script>
+
+<!-- Providers -->
+<script src="./shared/routing/RouteProvider.min.js"></script>
+
+<!-- Constants -->
+<script src="./constants/iconsConstant.min.js"></script>
+
+<!-- Services -->
+<script src="./shared/title/TitleService.min.js"></script>
+<script src="./shared/clipboard/ClipboardService.min.js"></script>
+<script src="./shared/object/ObjectService.min.js"></script>
+<script src="./shared/user/UserService.min.js"></script>
+<script src="./shared/storage/StorageService.min.js"></script>
+<script src="./shared/room/RoomService.min.js"></script>
+
+<!-- Controller -->
+<script src="./shared/root/RootController.min.js"></script>
+
+<!-- Filter -->
+<script src="./node_modules/angular-toarrayfilter/toArrayFilter.js"></script>
+
+<!-- Directives -->
+<script src="./directives/copy/copyDirective.min.js"></script>
+
+<!-- Components -->
+<script src="./components/toolbar/toolbarComponent.min.js"></script>
+<script src="./components/sidenav/sidenavComponent.min.js"></script>
+<script src="./components/chat/chatComponent.min.js"></script>
+<script src="./components/welcome/welcomeComponent.min.js"></script>
+<script src="./components/rooms/roomsComponent.min.js"></script>
+
+</body>
+</html>
