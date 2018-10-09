@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<md-list>
+    <md-list-item ng-repeat="room in $ctrl.rooms | orderBy: 'name'" ng-click="null">
+        <md-icon md-svg-icon="forum-outline"></md-icon>
+        <span>{{room.name}}</span>
+        <div ng-if="room.users.length > 0" class="md-secondary" layout="row" layout-align="end center">
+            <span style="padding-top: 2px; margin-right: 4px;">{{room.users.length}}</span>
+            <md-icon ng-if="room.users.length === 1" md-svg-icon="account"></md-icon>
+            <md-icon ng-if="room.users.length === 2" md-svg-icon="account-multiple"></md-icon>
+            <md-icon ng-if="room.users.length > 2" md-svg-icon="account-group"></md-icon>
+        </div>
+    </md-list-item>
+</md-list>

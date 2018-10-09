@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<md-content layout-fill layout="column" layout-align="center center">
+    <div md-whiteframe="4">
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <span class="md-title">Welcome to HP-Chat</span>
+            </div>
+        </md-toolbar>
+
+        <div style="padding: 32px;">
+            <p>Please enter your name:</p>
+
+            <form name="$ctrl.usernameForm" ng-submit="$ctrl.createUser($ctrl.username)">
+                <md-input-container class="md-no-error" style="margin-left: 16px; margin-top: 16px;">
+                    <label>Username</label>
+                    <input name="usernameInput"
+                            ng-model="$ctrl.username"
+                            ng-model-options="{updateOn: 'default blur click',debounce: { 'default': 400, 'blur': 0 }}"
+                            ng-change="$ctrl.validateUsername($ctrl.username)">
+
+                    <div ng-messages="$ctrl.usernameForm.$error">
+                        <div ng-message="existing">
+                            Username already exists
+                        </div>
+                    </div>
+                </md-input-container>
+            </form>
+        </div>
+
+        <div layout-margin layout="row" layout-align="end center">
+            <md-button ng-click="$ctrl.createUser($ctrl.username)" ng-disabled="!$ctrl.username || $ctrl.usernameForm.$invalid" class="md-raised md-accent">
+                Join Chat
+            </md-button>
+        </div>
+    </div>
+</md-content>
