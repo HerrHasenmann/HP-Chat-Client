@@ -17,7 +17,6 @@ function WelcomeController(UserService) {
 
         UserService.userNameExists(name).then(function (existing) {
 
-            console.log(existing);
             if (existing) {
                 //invalid
                 ctrl.usernameForm["usernameInput"].$setValidity("existing", false);

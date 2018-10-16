@@ -6,6 +6,23 @@ md-list-item md-icon {
     margin: initial;
 }
 
-md-list-item .md-list-item-inner:before, md-list-item:before {
-    min-height: unset;
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #00838f;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #00e5ff;
 }

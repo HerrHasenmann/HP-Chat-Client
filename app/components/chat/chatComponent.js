@@ -1,10 +1,12 @@
 app.component("chat", {
     templateUrl: "./components/chat/chatTemplate.html",
-    controller: [ChatController]
+    controller: ["RoomService", ChatController]
 });
 
-function ChatController() {
+function ChatController(RoomService) {
 
     var ctrl = this;
 
+    ctrl.getActiveRoom = RoomService.getActiveRoom;
+    ctrl.getActiveRooms = RoomService.getActiveRooms;
 }

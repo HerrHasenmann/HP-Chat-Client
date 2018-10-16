@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<div layout-fill layout="column" layout-align="end stretch">
+
+    <md-content flex="grow" style="overflow: overlay">
+
+        <div layout="row" layout-align="center end">
+            <div flex-xs="100" flex-sm="90" flex-md="80" flex-lg="70" flex-xl="50" style="overflow: hidden">
+
+                <!-- Messages -->
+                <div ng-repeat="message in $ctrl.data.messages" id="{{$index}}" layout="row" layout-padding ng-style="$ctrl.getMessageStyle(message)">
+                    <div layout="column" md-whiteframe="4" style="border-radius: 8px; max-width: 90%;" md-colors="$ctrl.getMessageBackground(message)">
+                        <div layout="row" layout-align="space-between center">
+                            <span class="md-body-2" style="margin-right: 32px;">{{message.sender.name}}</span>
+                            <span class="md-body-1">{{$ctrl.formatTime(message.timestamp)}}</span>
+                        </div>
+                        <div>
+                            <span style="word-break: break-word">{{message.text}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </md-content>
+
+    <div flex="noshrink" layout="row" layout-align="center center" style="padding-left: 8px; padding-right:  8px;">
+        <form md-whiteframe="2"
+              md-colors="{background: 'primary-hue-2'}"
+              flex-xs="100"
+              flex-sm="90"
+              flex-md="80"
+              flex-lg="70"
+              flex-xl="50"
+              layout="row"
+              layout-align="start end"
+              ng-submit="$ctrl.send($ctrl.data.messageText)"
+              style="padding: 8px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+            <md-input-container flex class="md-no-error md-accent" style="margin-bottom: 0;">
+                <label>{{"Message to " + $ctrl.data.room.name}}</label>
+                <input ng-model="$ctrl.data.messageText" autocomplete="off" autofocus>
+            </md-input-container>
+
+            <md-button type="submit" class="md-icon-button md-accent" ng-disabled="!$ctrl.data.messageText">
+                <md-icon md-svg-icon="send"></md-icon>
+            </md-button>
+        </form>
+    </div>
+</div>

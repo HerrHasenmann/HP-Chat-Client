@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<md-dialog>
+    <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+            Create Room
+        </div>
+    </md-toolbar>
+    <md-dialog-content flex style="margin-top: 8px;">
+        <form name="$ctrl.roomNameForm" ng-submit="$ctrl.createRoom($ctrl.roomName)" layout-margin>
+            <md-input-container class="md-no-error md-accent" style="margin-left: 16px; margin-top: 16px;">
+                <label>Name</label>
+                <input name="roomNameInput"
+                       ng-model="$ctrl.roomName"
+                       ng-model-options="{updateOn: 'default blur click',debounce: { 'default': 400, 'blur': 0 }}"
+                       ng-change="$ctrl.validateRoomName($ctrl.roomName)">
+
+                <div ng-messages="$ctrl.roomNameForm.$error">
+                    <div ng-message="existing">
+                        Name already exists
+                    </div>
+                </div>
+            </md-input-container>
+        </form>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="$ctrl.cancel()">Cancel</md-button>
+        <md-button ng-click="$ctrl.createRoom($ctrl.roomName)" ng-disabled="!$ctrl.roomName || $ctrl.roomNameForm.$invalid">Create</md-button>
+    </md-dialog-actions>
+</md-dialog>

@@ -7,7 +7,17 @@
         <toolbar></toolbar>
 
         <md-content flex>
-            <div ng-view></div>
+
+            <room ng-if="$ctrl.getActiveRoom()" data="$ctrl.getActiveRoom()"></room>
+
+            <rooms ng-if="!$ctrl.getActiveRoom()" hide show-xs show-sm></rooms>
+
+            <div ng-if="!$ctrl.getActiveRoom()" hide-xs hide-sm layout-fill layout="column" layout-align="center center">
+                <div>
+                    <span hide-xs hide-sm>Select a room to start</span>
+                </div>
+            </div>
+
         </md-content>
 
     </div>

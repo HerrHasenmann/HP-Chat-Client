@@ -26,17 +26,17 @@ app.config(["$mdThemingProvider", function ($mdThemingProvider) {
         .backgroundPalette('grey');
 
     $mdThemingProvider.theme('default-dark')
-        .primaryPalette('orange', {
+        .primaryPalette('blue-grey', {
             "default": "900"
         })
-        .accentPalette('orange', {
-            "default": "300"
+        .accentPalette('cyan', {
+            "default": "A400"
         })
         .warnPalette('deep-orange')
         .backgroundPalette('grey')
         .dark();
 
-    // $mdThemingProvider.setDefaultTheme('default-dark');
+    $mdThemingProvider.setDefaultTheme('default-dark');
 
 }]);
 
